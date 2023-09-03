@@ -1,0 +1,56 @@
+<h2 class="text-2xl font-medium p-0">Bulk resolution</h2>
+<p>Upload batch resolution</p>
+<div class="mt-8">
+  <div class="px-1 pb-1">
+    <mat-card>
+      <mat-card-content>
+        <div class="w-full">
+          <form (ngSubmit)="onSubmit()" [formGroup]="form" class="pt-1.5">
+            <mat-form-field>
+              <ngx-mat-file-input (ngModelChange)="onFileInputChange($event)" accept=".csv"
+                                  formControlName="file"></ngx-mat-file-input>
+              <mat-icon matSuffix>folder</mat-icon>
+              <mat-hint>Upload file</mat-hint>
+            </mat-form-field>
+
+            <!--<mat-radio-group aria-label="Select an option" formControlName="status">
+              <mat-radio-button value="COMPLETED">Mark as complete</mat-radio-button>
+              <mat-radio-button value="FAILED">Mark as failed</mat-radio-button>
+            </mat-radio-group>-->
+
+            <mat-radio-group aria-label="Select an option" formControlName="status">
+              <mat-radio-button>
+                <input (change)="onRadioChange($event)" id="COMPLETED" name="status" value="COMPLETED">
+              </mat-radio-button>
+              <label for="COMPLETED"></label>
+
+              <mat-radio-button>
+                <input (change)="onRadioChange($event)" id="FAILED" name="status" value="FAILED">
+              </mat-radio-button>
+              <label for="FAILED"></label>
+            </mat-radio-group>
+            <!--            <mat-radio-group>-->
+            <!--              <div>-->
+            <!--                <input (change)="onRadioChange($event)" id="COMPLETED" name="options" type="radio" value="COMPLETED">-->
+            <!--                <label for="COMPLETED">Make as completed</label>-->
+            <!--              </div>-->
+            <!--              <div>-->
+            <!--                <input (change)="onRadioChange($event)" id="FAILED" name="options" type="radio" value="FAILED">-->
+            <!--                <label for="FAILED">Make as failed</label>-->
+            <!--              </div>-->
+            <!--            </mat-radio-group>-->
+
+
+            <div class="mt-6 flex items-center gap-3">
+              <button color="primary" mat-raised-button type="submit">Submit</button>
+              <button mat-raised-button type="reset">Cancel</button>
+            </div>
+
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+

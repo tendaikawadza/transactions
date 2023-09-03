@@ -1,0 +1,27 @@
+<ng-container>
+  <div class="flex items-center justify-between">
+    <!--    <lia-back>-->
+    <div>
+      <h2 class="text-2xl font-medium">Bulk Resolve Details</h2>
+      <p>Bulk Resolutions Information</p>
+    </div>
+    <!--    </lia-back>-->
+    <!-- <admin-product-actions (delete)="onDeleteProduct()" [status]="product.status"></admin-product-actions>-->
+  </div>
+  <div class="mt-8">
+    <div class="px-1 pb-1">
+      <mat-card>
+        <mat-card-content>
+          <!--<client-data-list [data]="product" [pipes]="pipes" [skipKeys]="skipKeys"></client-data-list>-->
+
+          {{refs|json}}
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</ng-container>
+<ng-template #spinner>
+  <div class="flex justify-center">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+</ng-template>
